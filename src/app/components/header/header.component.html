@@ -1,0 +1,20 @@
+<mat-toolbar class="searchbar">
+  <div class="shoplist">
+    <button mat-raised-button [matMenuTriggerFor]="menu">
+      <mat-icon>shopping_bag</mat-icon>
+      Browse
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Development</button>
+      <button mat-menu-item>Quality</button>
+      <button mat-menu-item>Services</button>
+    </mat-menu>
+    <input type="text" placeholder="Search.." name="search2">
+    <button color="primary" mat-raised-button type="submit">search</button>
+  </div>
+  <div id="nav-buttons">
+    <button mat-raised-button (click)="notificationToParent('home')">Home</button>
+    <button mat-raised-button (click)="notificationToParent('learning')">MyLearning</button>
+    <button mat-raised-button (click)="notificationToParent('account')">Me</button>
+  </div>
+</mat-toolbar>

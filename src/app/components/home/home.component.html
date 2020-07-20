@@ -1,0 +1,51 @@
+<app-header (outputToParent)="setValue($event)"></app-header>
+
+<div class="slider" *ngIf="showHome">
+  <ng-image-slider
+    [imagePopup]="true"
+    [animationSpeed]="sliderAnimationSpeed"
+    [imageSize]="{ width: '1400px', height: '350px' }"
+    [images]="imageObject1"
+    [infinite]="sliderInfinite"
+    [autoSlide]="sliderAutoSlide ? 1 : 0"
+    #nav
+  >
+  </ng-image-slider>
+</div>
+
+<section *ngIf="showHome" id="videos">
+  <!-- Demo-1 -->
+  <h1>Popular On This Site</h1>
+  <div class="grid-container">
+    <div class="grid-item">
+      <mat-icon (click)="previous(1)" class="space"
+        >keyboard_arrow_left</mat-icon
+      >
+    </div>
+
+    <ol class="grid-item" *ngFor="let video of videoData">
+      <li>
+        <mat-card class="card myDIV">
+          <!-- <mat-video
+            src="https://www.youtube.com/embed/BBpAmxU_NQo"
+          ></mat-video> -->
+          <p></p>
+          <iframe src=""></iframe>
+          <mat-card-content class="hide">
+            <h2>DataStructues</h2>
+            <small>Denis Ritche,Dell Employee</small>
+          </mat-card-content>
+          <button mat-button class="hide">LIKE</button>
+        </mat-card>
+      </li>
+    </ol>
+
+    <div>
+      <mat-icon (click)="next(1)" class="space">keyboard_arrow_right</mat-icon>
+    </div>
+  </div>
+</section>
+
+<app-learning *ngIf="showLearning"></app-learning>
+<app-account *ngIf="showMyAccount"></app-account>
+<!-- <app-footer></app-footer> -->
